@@ -211,7 +211,7 @@ html[data-season=sommer] .hero-photo .snow{display:none}
 .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;font-family:var(--serif)}
 .cal-nav{width:2.4rem;height:2.4rem;border:1px solid var(--rule);background:none;font-size:1.3rem;cursor:pointer;color:var(--ink)}
 .cal-months{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.2rem}
-.cal-m h4{margin:0 0 .5rem;font:italic 400 1.05rem var(--serif);text-transform:capitalize}
+.cal-m h4,.cal-m .cal-h{margin:0 0 .5rem;font:italic 400 1.05rem var(--serif);text-transform:capitalize}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font-size:.8rem;text-align:center}
 .cal-grid .wd{color:var(--ink-2);font-size:.7rem;padding:.2rem 0}
 .cal-grid button{border:0;background:rgba(85,112,63,.1);padding:.45rem 0;cursor:pointer;font:inherit;color:var(--ink)}

@@ -28,7 +28,8 @@
     walk(el);
     const words = $$('.wi', el);
     let top = null, line = -1;
-    words.forEach(w => { const t = Math.round(w.parentNode.offsetTop); if (t !== top) { top = t; line++; } w.style.setProperty('--ln', line); });
+    const tops = words.map(w => Math.round(w.parentNode.offsetTop)); /* erst alles lesen, dann schreiben: nur ein Layout */
+    words.forEach((w, k) => { if (tops[k] !== top) { top = tops[k]; line++; } w.style.setProperty('--ln', line); });
   };
   const splits = $$('[data-split]');
   if (!reduce) {
@@ -70,7 +71,7 @@
       });
     };
     addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    addEventListener('resize', update); update();
+    addEventListener('resize', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }); requestAnimationFrame(update);
   }
 
   /* 5 · Magnetische Buttons (nur Maus) */

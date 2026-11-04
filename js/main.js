@@ -21,7 +21,7 @@
     for (let k = 0; k < months; k++) {
       const m = new Date(m0.getFullYear(), m0.getMonth() + k, 1);
       const wrap = document.createElement('div'); wrap.className = 'cal-m';
-      let h = '<h4>' + monthName(m) + '</h4><div class="cal-grid">' + ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'].map(w => '<span class="wd">' + w + '</span>').join('');
+      let h = '<h3 class="cal-h">' + monthName(m) + '</h3><div class="cal-grid">' + ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'].map(w => '<span class="wd">' + w + '</span>').join('');
       const lead = (m.getDay() + 6) % 7;
       for (let i = 0; i < lead; i++) h += '<span></span>';
       const days = new Date(m.getFullYear(), m.getMonth() + 1, 0).getDate();

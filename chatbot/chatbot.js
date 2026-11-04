@@ -146,7 +146,7 @@
 
     var btn = el('button', 'cb-launcher', '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-4.6 3.5A.9.9 0 0 1 3 20.8V6a2 2 0 0 1 1-2Zm3 6.2a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Zm5 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Zm5 0a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Z"/></svg><span class="cb-launcher-label">' + esc(kb.launcherLabel || 'Fragen?') + '</span>');
     btn.type = 'button';
-    btn.setAttribute('aria-label', (kb.assistantName || 'Demo-Assistent') + ' öffnen');
+    btn.setAttribute('aria-label', (kb.launcherLabel || 'Fragen?') + ' – ' + (kb.assistantName || 'Demo-Assistent') + ' öffnen');
     btn.setAttribute('aria-expanded', 'false');
     btn.setAttribute('aria-controls', 'cb-panel');
 
@@ -163,6 +163,10 @@
       '</header>' +
       '<div class="cb-log" role="log" aria-live="polite"></div>' +
       '<div class="cb-chips"></div>' +
+      (kb.handoff && (kb.handoff.tel || kb.handoff.mail) ? '<p class="cb-handoff"><span>' + esc(kb.handoff.text || 'Lieber persönlich?') + '</span>' +
+        (kb.handoff.tel ? '<a class="cb-hand" href="tel:' + esc(kb.handoff.tel) + '"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>' + esc(kb.handoff.telLabel || 'Anrufen') + '</a>' : '') +
+        (kb.handoff.mail ? '<a class="cb-hand" href="mailto:' + esc(kb.handoff.mail) + '"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.4 7H19.6zM4 8.6V17h16V8.6l-8 5.5z"/></svg>' + esc(kb.handoff.mailLabel || 'E-Mail') + '</a>' : '') +
+        '</p>' : '') +
       '<form class="cb-form"><label class="cb-sr" for="cb-input">Ihre Frage</label>' +
         '<input id="cb-input" class="cb-input" type="text" autocomplete="off" maxlength="200" placeholder="' + esc(kb.placeholder || 'Ihre Frage …') + '">' +
         '<button class="cb-send" type="submit" aria-label="Senden"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6 3.3 10l12.6 2-12.6 2z"/></svg></button></form>' +
@@ -228,5 +232,7 @@
     fetch(KB_URL).then(function (r) { return r.json(); }).then(start)
       .catch(function (e) { console.error('Demo-Assistent: Wissensdatei konnte nicht geladen werden', e); });
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+  // Runde 8: erst nach dem Laden der Seite starten (Wissensdatei blockiert so nie den ersten Eindruck)
+  function later() { if ('requestIdleCallback' in window) requestIdleCallback(boot, { timeout: 2000 }); else setTimeout(boot, 800); }
+  if (document.readyState === 'complete') later(); else window.addEventListener('load', later);
 })();
