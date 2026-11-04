@@ -1,0 +1,1009 @@
+{
+ "version": 1,
+ "site": "https://www.gaestehaus-kennerknecht.de/",
+ "title": "Gästehaus Kennerknecht",
+ "assistantName": "Demo-Assistent",
+ "launcherLabel": "Fragen an uns?",
+ "avatar": "img/favicon.svg",
+ "placeholder": "z. B. Was kostet eine Woche zu viert?",
+ "demoNote": "Demo-Assistent · antwortet nur mit Inhalten dieser Website · sendet nichts",
+ "theme": {
+  "accent": "#ad4430",
+  "accent-d": "#8f3726",
+  "ink": "#1f2a22",
+  "paper": "#f8f4ec",
+  "gold": "#e8c88a",
+  "font": "\"Figtree\", system-ui, sans-serif",
+  "serif": "\"Fraunces\", Georgia, serif"
+ },
+ "greeting": "Grüß Gott! Ich bin der Demo-Assistent des Gästehauses Kennerknecht in Thalkirchdorf. Fragen Sie mich zu unseren Ferienwohnungen, Preisen, freien Terminen oder zur Anfahrt.",
+ "chips": [
+  {
+   "label": "Wohnungen"
+  },
+  {
+   "label": "Preise"
+  },
+  {
+   "label": "Ist noch was frei?"
+  },
+  {
+   "label": "Anfahrt"
+  }
+ ],
+ "stopwords": [
+  "haben",
+  "habt",
+  "gibt",
+  "gibts",
+  "ihre",
+  "euch",
+  "eure",
+  "eine",
+  "einen",
+  "einem",
+  "einer",
+  "auch",
+  "kann",
+  "koennen",
+  "kostet",
+  "kosten",
+  "preis",
+  "preise",
+  "wieviel",
+  "viel",
+  "welche",
+  "welcher",
+  "welches",
+  "bitte",
+  "danke",
+  "hallo",
+  "noch",
+  "dass",
+  "wann",
+  "sind",
+  "seid",
+  "wird",
+  "werden",
+  "mich",
+  "uns",
+  "unser",
+  "ihnen",
+  "diese",
+  "dieser",
+  "personen",
+  "person",
+  "erwachsene",
+  "kinder",
+  "kind",
+  "pro",
+  "tag",
+  "nacht",
+  "woche",
+  "wohnung",
+  "ferienwohnung",
+  "zimmer",
+  "moechte",
+  "moechten",
+  "gerne",
+  "frage",
+  "fuer"
+ ],
+ "intents": [
+  {
+   "id": "greet",
+   "keywords": [
+    "hallo",
+    "servus",
+    "gruess gott",
+    "guten tag",
+    "moin",
+    "hi"
+   ],
+   "answer": "Grüß Gott! Wie kann ich helfen? Fragen Sie mich nach Wohnungen, Preisen, Verfügbarkeit oder Anfahrt.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "thanks",
+   "keywords": [
+    "danke",
+    "vielen dank",
+    "super",
+    "perfekt"
+   ],
+   "answer": "Gern geschehen! Wir freuen uns auf Ihren Urlaub in Thalkirchdorf.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "flats",
+   "weight": 2,
+   "keywords": [
+    "wohnungen",
+    "ferienwohnung",
+    "fewo",
+    "apartment",
+    "unterkunft",
+    "zimmer",
+    "doppelzimmer",
+    "zimmerangebot",
+    "uebernacht",
+    "groesse",
+    "wie viele personen",
+    "fuer 5",
+    "fuenf personen",
+    "5 personen",
+    "schlafzimmer",
+    "schlafraeume"
+   ],
+   "answer": "Wir haben **3 Ferienwohnungen für 2–5 Personen** und ein **Doppelzimmer**:\n• **Salmaser Höhe** – 4 Personen\n• **Denneberg** – 2–5 Personen, 2 separate Schlafräume, Balkon\n• **Dorfblick** – 4 Personen\n\nAlle sind Nichtraucher-Wohnungen mit Wasserkocher, Kaffeemaschine und Handtüchern; Brötchenservice auf Wunsch.",
+   "links": [
+    {
+     "label": "Zu den Wohnungen",
+     "href": "#wohnungen"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "salmaser",
+   "weight": 4,
+   "keywords": [
+    "salmaser",
+    "salmaserhoehe"
+   ],
+   "answer": "**Ferienwohnung Salmaser Höhe**\n• für 4 Personen\n• renoviert im August 2010, 3 Sterne\n• Wasserkocher, Kaffeemaschine, Handtücher usw.\n• Brötchenservice, Nichtraucher\n• Mindestaufenthalt 3 Tage",
+   "links": [
+    {
+     "label": "Zu den Wohnungen",
+     "href": "#wohnungen"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "denneberg",
+   "weight": 4,
+   "keywords": [
+    "denneberg",
+    "balkon",
+    "freisitz"
+   ],
+   "answer": "**Ferienwohnung Denneberg**\n• für 2–5 Personen, 2 separate Schlafräume\n• Balkon mit großem überdachtem Freisitz\n• renoviert im Dezember 2013, 2 Sterne\n• Wasserkocher, Kaffeemaschine, Handtücher usw.\n• Brötchenservice, Nichtraucher\n• Mindestaufenthalt 4 Tage",
+   "links": [
+    {
+     "label": "Zu den Wohnungen",
+     "href": "#wohnungen"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "dorfblick",
+   "weight": 4,
+   "keywords": [
+    "dorfblick"
+   ],
+   "answer": "**Ferienwohnung Dorfblick**\n• für 4 Personen\n• komplett renoviert im August 2011\n• Wasserkocher, Kaffeemaschine, Handtücher usw.\n• Brötchenservice, Nichtraucher\n• Mindestaufenthalt 3 Tage",
+   "links": [
+    {
+     "label": "Zu den Wohnungen",
+     "href": "#wohnungen"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "prices",
+   "weight": 2,
+   "keywords": [
+    "preis",
+    "preise",
+    "kosten",
+    "kostet",
+    "was kostet",
+    "euro",
+    "teuer",
+    "guenstig",
+    "tarif",
+    "preisliste"
+   ],
+   "answer": "**Preise pro Tag** (ab-Preise, abhängig von der Aufenthaltsdauer):\n☀️ Sommer: 2 Personen ab 75 € · 4 Erwachsene ab 105 €\n❄️ Winter: 2 Personen ab 85 € · 4 Erwachsene ab 115 €\n\nDazu Kurabgabe (3,50 € pro Person/Nacht, 1,80 € pro Kind/Nacht) und einmalig 39 € Endreinigung. Den genauen Preis nennen wir Ihnen gern auf Anfrage.",
+   "links": [
+    {
+     "label": "Zur Preisliste",
+     "href": "#preise"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "showSections": true
+  },
+  {
+   "id": "winterp",
+   "weight": 6,
+   "keywords": [
+    "winter",
+    "skiurlaub",
+    "weihnacht",
+    "silvester"
+   ],
+   "answer": "**Preise Winter (pro Tag)**\n• 2 Personen **ab 85 €**\n• 2 Erwachsene + 1 Kind **95 €**\n• 2 Erwachsene + 2 Kinder **ab 105 €**\n• 4 Erwachsene **ab 115 €**\n\nDie Preise ändern sich je nach Aufenthaltsdauer; dazu Kurabgabe und 39 € Endreinigung. Im Winter erreichen Sie die Skilifte Thalkirchdorf–Hündle in wenigen Gehminuten.",
+   "links": [
+    {
+     "label": "Zur Preisliste",
+     "href": "#preise"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Nebenkosten",
+     "ask": "Preisbausteine & Nebenkosten"
+    },
+    {
+     "label": "Ist noch was frei?"
+    }
+   ]
+  },
+  {
+   "id": "sommerp",
+   "weight": 6,
+   "keywords": [
+    "sommer",
+    "sommerferien",
+    "juli",
+    "august"
+   ],
+   "answer": "**Preise Sommer (pro Tag)**\n• 2 Personen **ab 75 €**\n• 2 Erwachsene + 1 Kind **ab 85 €**\n• 2 Erwachsene + 2 Kinder **ab 95 €**\n• 4 Erwachsene **ab 105 €**\n\nDie Preise ändern sich je nach Aufenthaltsdauer; dazu Kurabgabe und 39 € Endreinigung.",
+   "links": [
+    {
+     "label": "Zur Preisliste",
+     "href": "#preise"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Nebenkosten",
+     "ask": "Preisbausteine & Nebenkosten"
+    },
+    {
+     "label": "Ist noch was frei?"
+    }
+   ]
+  },
+  {
+   "id": "kidprice",
+   "weight": 6,
+   "keywords": [
+    "kostet ein kind",
+    "kinderpreis",
+    "pro kind",
+    "kinder kosten",
+    "preis kind",
+    "preis fuer kinder",
+    "kind kostet",
+    "kosten kinder"
+   ],
+   "answer": "**Kinderpreise:** Kind bis 14 Jahre **10 €**, ab 14 Jahre **15 €** pro Tag (zusätzlich zum Grundpreis). Die Kurabgabe beträgt 1,80 € pro Kind und Nacht.",
+   "links": [
+    {
+     "label": "Zur Preisliste",
+     "href": "#preise"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "five",
+   "weight": 6,
+   "keywords": [
+    "5 personen",
+    "fuenf personen",
+    "zu fuenft",
+    "5 pers",
+    "zwei schlafzimmer",
+    "2 schlafzimmer",
+    "getrennte schlafzimmer"
+   ],
+   "answer": "Für bis zu 5 Personen passt die **Ferienwohnung Denneberg**: 2–5 Personen, 2 separate Schlafräume, Balkon mit großem überdachtem Freisitz. Mindestaufenthalt 4 Tage.",
+   "links": [
+    {
+     "label": "Zu den Wohnungen",
+     "href": "#wohnungen"
+    },
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "minstay",
+   "weight": 3,
+   "keywords": [
+    "mindestaufenthalt",
+    "mindestens",
+    "wochenende",
+    "kurzurlaub",
+    "eine nacht",
+    "zwei naechte",
+    "2 naechte",
+    "1 nacht"
+   ],
+   "answer": "**Mindestaufenthalt:** Salmaser Höhe und Dorfblick 3 Tage, Denneberg 4 Tage.",
+   "links": [
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "avail",
+   "weight": 3,
+   "keywords": [
+    "frei",
+    "noch was frei",
+    "verfuegbar",
+    "verfuegbarkeit",
+    "belegung",
+    "belegt",
+    "buchen",
+    "buchung",
+    "reservier",
+    "anfrage",
+    "anfragen",
+    "termin",
+    "ostern",
+    "pfingsten",
+    "herbstferien"
+   ],
+   "answer": "Ob in Ihrem Zeitraum noch etwas frei ist, klären wir gern persönlich. Wählen Sie im **Kalender** Anreise und Abreise und schicken Sie die Anfrage – oder rufen Sie an: **08325 927349**.\n\n(Demo: Der Kalender zeigt noch keine echten Belegungen, das Formular sendet nichts.)",
+   "links": [
+    {
+     "label": "Zur Anfrage mit Kalender",
+     "href": "#anfrage"
+    },
+    {
+     "label": "08325 927349 anrufen",
+     "href": "tel:+498325927349"
+    },
+    {
+     "label": "E-Mail schreiben",
+     "href": "mailto:haus-kennerknecht@t-online.de"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Wohnungen"
+    }
+   ]
+  },
+  {
+   "id": "contact",
+   "weight": 2,
+   "keywords": [
+    "telefon",
+    "anrufen",
+    "nummer",
+    "erreichen",
+    "kontakt",
+    "email",
+    "e mail",
+    "mail",
+    "handy",
+    "mobil"
+   ],
+   "answer": "**Kontakt**\nTel.: 08325 927349\nMobil: 0151 67954742\nE-Mail: haus-kennerknecht@t-online.de",
+   "links": [
+    {
+     "label": "08325 927349 anrufen",
+     "href": "tel:+498325927349"
+    },
+    {
+     "label": "E-Mail schreiben",
+     "href": "mailto:haus-kennerknecht@t-online.de"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "address",
+   "weight": 3,
+   "keywords": [
+    "adresse",
+    "anfahrt",
+    "wo seid",
+    "wo sind",
+    "wo liegt",
+    "wo ist",
+    "wie komme",
+    "anreise",
+    "lage",
+    "route",
+    "navi",
+    "strasse",
+    "thalkirchdorf",
+    "oberstaufen"
+   ],
+   "answer": "**Gästehaus Kennerknecht**\nKirchdorfer Straße 11\n87534 Oberstaufen-Thalkirchdorf\n\nDas Haus liegt sehr ruhig und doch zentral in Thalkirchdorf bei Oberstaufen.",
+   "links": [
+    {
+     "label": "Route (OpenStreetMap)",
+     "href": "https://www.openstreetmap.org/?mlat=47.55243&mlon=10.08728#map=16/47.55243/10.08728"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "weight": 3,
+   "keywords": [
+    "familie",
+    "familien",
+    "kinder",
+    "spielplatz",
+    "schaukel",
+    "rutsche",
+    "trampolin",
+    "slackline",
+    "kinderfreundlich"
+   ],
+   "answer": "Für Familien mit Kindern sind wir bestens geeignet: Hinter dem Haus gibt es einen kleinen **Spielplatz mit Schaukel, Rutsche, Trampolin und Slackline**. Spielplatz und Grillplatz stehen allen Gästen zur Verfügung.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "garden",
+   "weight": 3,
+   "keywords": [
+    "grill",
+    "grillen",
+    "garten",
+    "gartenhaus",
+    "liegewiese",
+    "wiese",
+    "draussen"
+   ],
+   "answer": "Unser **Gartenhäuschen mit Grillplatz** lädt zum gemütlichen Beisammensein ein – mit Blick auf den Denneberg. Dazu gibt es eine große Liegewiese mit Panoramablick.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "ski",
+   "weight": 3,
+   "keywords": [
+    "ski",
+    "skifahren",
+    "lift",
+    "skilift",
+    "piste",
+    "huendle",
+    "loipe",
+    "langlauf",
+    "schnee"
+   ],
+   "answer": "Im Winter erreichen Sie die **Skilifte Thalkirchdorf–Hündle** in wenigen Gehminuten, dazu gibt es einen **direkten Loipeneinstieg** Richtung Oberstaufen und Immenstadt.",
+   "links": [
+    {
+     "label": "Winterpreise",
+     "href": "#preise"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Winter",
+     "ask": "Preise Winter (pro Tag)"
+    },
+    {
+     "label": "Ist noch was frei?"
+    }
+   ]
+  },
+  {
+   "id": "summer",
+   "weight": 3,
+   "keywords": [
+    "wandern",
+    "wanderung",
+    "freibad",
+    "baden",
+    "schwimmen",
+    "aquaria",
+    "erlebnisbad",
+    "ausflug",
+    "freizeit",
+    "unternehmen"
+   ],
+   "answer": "Im Sommer bieten sich viele **Wanderungen** an; das **Freibad Thalkirchdorf** ist in wenigen Gehminuten erreichbar. Außerdem lädt das **Erlebnisbad Aquaria** in Oberstaufen zum Baden ein.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "brot",
+   "weight": 3,
+   "keywords": [
+    "broetchen",
+    "fruehstueck",
+    "semmel",
+    "kaffeemaschine",
+    "ausstattung",
+    "handtuch",
+    "handtuecher",
+    "bettwaesche",
+    "kueche"
+   ],
+   "answer": "Alle Ferienwohnungen sind mit **Wasserkocher, Kaffeemaschine, Handtüchern usw.** ausgestattet, und es gibt einen **Brötchenservice**. Genauere Angaben zur Ausstattung erfragen Sie gern telefonisch.",
+   "links": [
+    {
+     "label": "08325 927349 anrufen",
+     "href": "tel:+498325927349"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Salmaser Höhe"
+    },
+    {
+     "label": "Denneberg"
+    },
+    {
+     "label": "Dorfblick"
+    },
+    {
+     "label": "Preise"
+    }
+   ]
+  },
+  {
+   "id": "smoke",
+   "weight": 3,
+   "keywords": [
+    "rauchen",
+    "raucher",
+    "nichtraucher"
+   ],
+   "answer": "Alle Ferienwohnungen sind **Nichtraucher-Wohnungen**.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "host",
+   "weight": 2,
+   "keywords": [
+    "gastgeber",
+    "inhaber",
+    "vermieter",
+    "wer seid",
+    "ueber euch",
+    "kennerknecht",
+    "bauernhaus",
+    "haus"
+   ],
+   "answer": "Ihre Gastgeber sind **Familie Kennerknecht**. Unser liebevoll umgebautes Bauernhaus ist eine kleine Pension mit 3 Ferienwohnungen und einem Doppelzimmer in Thalkirchdorf bei Oberstaufen.",
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  },
+  {
+   "id": "unknown",
+   "weight": 3,
+   "keywords": [
+    "hund",
+    "haustier",
+    "wlan",
+    "wifi",
+    "internet",
+    "parkplatz",
+    "parken",
+    "garage",
+    "barrierefrei",
+    "aufzug",
+    "waschmaschine",
+    "sauna",
+    "zahlung",
+    "bezahlen",
+    "storno",
+    "anzahlung",
+    "gaestekarte"
+   ],
+   "answer": "Dazu steht auf der Website leider nichts. Am besten fragen Sie direkt nach: **08325 927349** oder per E-Mail.",
+   "links": [
+    {
+     "label": "08325 927349 anrufen",
+     "href": "tel:+498325927349"
+    },
+    {
+     "label": "E-Mail schreiben",
+     "href": "mailto:haus-kennerknecht@t-online.de"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Wohnungen"
+    },
+    {
+     "label": "Preise"
+    },
+    {
+     "label": "Ist noch was frei?"
+    },
+    {
+     "label": "Anfahrt"
+    }
+   ]
+  }
+ ],
+ "menu": {
+  "foundPrefix": "Das habe ich in der Preisliste gefunden:",
+  "links": [
+   {
+    "label": "Zur Preisliste",
+    "href": "#preise"
+   },
+   {
+    "label": "Zur Anfrage mit Kalender",
+    "href": "#anfrage"
+   }
+  ],
+  "followChips": [
+   {
+    "label": "Ist noch was frei?"
+   },
+   {
+    "label": "Wohnungen"
+   }
+  ],
+  "sections": [
+   {
+    "title": "Preise Sommer (pro Tag)",
+    "short": "Sommer",
+    "keywords": [
+     "sommer",
+     "sommerpreis",
+     "juli",
+     "august",
+     "juni"
+    ],
+    "items": [
+     {
+      "name": "2 Personen",
+      "price": "ab 75 €"
+     },
+     {
+      "name": "2 Erwachsene + 1 Kind",
+      "price": "ab 85 €"
+     },
+     {
+      "name": "2 Erwachsene + 2 Kinder",
+      "price": "ab 95 €"
+     },
+     {
+      "name": "4 Erwachsene",
+      "price": "ab 105 €"
+     }
+    ],
+    "note": "Die Preise ändern sich je nach Aufenthaltsdauer. Dazu kommen Kurabgabe (3,50 € pro Person/Nacht, 1,80 € pro Kind/Nacht) und einmalig 39 € Endreinigung."
+   },
+   {
+    "title": "Preise Winter (pro Tag)",
+    "short": "Winter",
+    "keywords": [
+     "winter",
+     "winterpreis",
+     "skiurlaub",
+     "weihnacht",
+     "silvester",
+     "januar",
+     "februar"
+    ],
+    "items": [
+     {
+      "name": "2 Personen",
+      "price": "ab 85 €"
+     },
+     {
+      "name": "2 Erwachsene + 1 Kind",
+      "price": "95 €"
+     },
+     {
+      "name": "2 Erwachsene + 2 Kinder",
+      "price": "ab 105 €"
+     },
+     {
+      "name": "4 Erwachsene",
+      "price": "ab 115 €"
+     }
+    ],
+    "note": "Die Preise ändern sich je nach Aufenthaltsdauer. Dazu kommen Kurabgabe (3,50 € pro Person/Nacht, 1,80 € pro Kind/Nacht) und einmalig 39 € Endreinigung."
+   },
+   {
+    "title": "Preisbausteine & Nebenkosten",
+    "short": "Nebenkosten",
+    "keywords": [
+     "nebenkosten",
+     "kurabgabe",
+     "kurtaxe",
+     "endreinigung",
+     "reinigung",
+     "zusatzkosten",
+     "weiterer erwachsener",
+     "kinderpreis",
+     "kind kostet",
+     "grundpreis"
+    ],
+    "items": [
+     {
+      "name": "Grundpreis Sommer für 2 Erwachsene",
+      "price": "ab 75 €"
+     },
+     {
+      "name": "jeder weitere Erwachsene",
+      "price": "15 €"
+     },
+     {
+      "name": "Kind bis 14 Jahre",
+      "price": "10 €"
+     },
+     {
+      "name": "Kind ab 14 Jahre",
+      "price": "15 €"
+     },
+     {
+      "name": "Kurabgabe pro Person und Nacht",
+      "price": "3,50 €"
+     },
+     {
+      "name": "Kurabgabe pro Kind und Nacht",
+      "price": "1,80 €"
+     },
+     {
+      "name": "Endreinigung (einmalig)",
+      "price": "39 €"
+     }
+    ]
+   }
+  ]
+ },
+ "fallback": {
+  "text": "Das kann ich leider nicht sicher beantworten – ich kenne nur die Inhalte dieser Website. Rufen Sie gern an: **08325 927349**.",
+  "links": [
+   {
+    "label": "08325 927349 anrufen",
+    "href": "tel:+498325927349"
+   },
+   {
+    "label": "E-Mail schreiben",
+    "href": "mailto:haus-kennerknecht@t-online.de"
+   }
+  ]
+ }
+}

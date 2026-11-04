@@ -1,0 +1,75 @@
+/* ===== Premium-Schicht (Runde 5): „Ein Tag im Allgäu“ – die Seite läuft von morgens bis Gute Nacht ===== */
+/* --- Intro: Horizont zeichnet sich, die Sonne geht auf --- */
+.intro{display:none}
+html.intro-on .intro{display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;inset:0;z-index:1000;background:linear-gradient(180deg,#f3e4cf 0%,#f8efe2 55%,var(--paper) 100%);cursor:pointer;transition:opacity .6s,transform .7s cubic-bezier(.7,0,.25,1);animation:introFailsafe .01s 4s forwards}
+html[data-season=winter].intro-on .intro{background:linear-gradient(180deg,#dfe9f1,#f1f5f8 60%,var(--paper))}
+@keyframes introFailsafe{to{visibility:hidden;pointer-events:none}}
+.intro-sky{width:min(560px,86vw);height:auto;overflow:visible}
+.intro-sun{fill:#e9a15a;transform:translateY(60px);animation:sunUp 1.2s .25s cubic-bezier(.2,.7,.2,1) forwards}
+html[data-season=winter] .intro-sun{fill:#e8b77c}
+@keyframes sunUp{to{transform:translateY(-38px)}}
+.intro-hz{fill:var(--paper);stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s .05s ease-out forwards}
+.intro-hz2{fill:none;stroke:var(--ink);stroke-width:1.2;opacity:.5;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s .35s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.intro-hand{font-size:clamp(2.4rem,7vw,4.4rem);color:var(--red);margin:-.4rem 0 .4rem;transform:rotate(-2deg);opacity:0;animation:fadeUp .7s .6s forwards}
+.intro-sub{font:600 .72rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--ink-2);opacity:0;animation:fadeUp .6s .85s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px) rotate(-2deg)}to{opacity:1}}
+.intro-skip{position:absolute;right:1.4rem;bottom:1.4rem;background:none;border:1.5px solid var(--ink);color:var(--ink);font:600 .72rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:.7rem 1rem;cursor:pointer}
+.intro-skip:hover,.intro-skip:focus-visible{background:var(--ink);color:var(--paper);outline:none}
+html.intro-out .intro{opacity:0;transform:translateY(-3%);pointer-events:none}
+
+/* --- Hero: Sonnenbogen + Uhrzeit wie im Reisetagebuch --- */
+.day-start{display:flex;align-items:flex-end;gap:.9rem;margin:0 0 .3rem}
+.hero-arc{width:84px;height:37px;overflow:visible;flex:none}
+.hero-arc path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-dasharray:4 7}
+.hero-arc circle{fill:#e9a15a}
+.fx .hero-arc[data-draw] circle{transform:translate(0,30px);opacity:0;transition:transform 1.4s .4s var(--ease),opacity .6s .4s}
+.fx .hero-arc[data-draw].in circle{transform:none;opacity:1}
+.day-time{font:400 .95rem/1 var(--serif);font-variant-numeric:tabular-nums;border:1.5px solid var(--ink);padding:.25rem .45rem;letter-spacing:.06em;margin-bottom:.35rem}
+.day-start .kicker{margin:0 0 .2rem}
+.day-line{font:600 .72rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin:0 0 1.6rem;padding-left:calc(84px + .9rem)}
+
+/* --- Tageszeit am Kapitelanfang (Desktop) --- */
+@media (min-width:1101px){
+  section[data-ch-no]{position:relative}
+  section[data-ch-no]::before{content:attr(data-ch-no);position:absolute;top:clamp(1rem,2.4vw,2rem);right:var(--pad);font:400 .9rem/1 var(--serif);letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--ink-2);border-bottom:1px solid currentColor;padding-bottom:.2rem;z-index:2}
+}
+
+/* --- Sonnenuhr-Anzeige: die Sonne wandert mit dem Scrollen über den Bogen --- */
+.sun-ind{position:fixed;left:1.2rem;bottom:1.2rem;z-index:30;width:9.6rem;padding:.6rem .8rem .7rem;background:color-mix(in srgb,var(--card) 94%,transparent);border:1px solid var(--rule);box-shadow:0 12px 24px -16px rgba(0,0,0,.45);opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s var(--ease);pointer-events:none}
+.sun-ind.show{opacity:1;transform:none}.sun-ind.over-hero{opacity:0;transform:translateY(10px)}
+.sun-ind svg{display:block;width:100%;height:auto;overflow:visible}
+.si-arc{fill:none;stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:2 4}
+.si-hz{stroke:var(--ink);stroke-width:1.4}
+.si-arm{position:absolute;left:50%;top:calc(.6rem + 7.95rem * 60 / 120);width:0;height:0;transform:rotate(calc(-90deg + var(--sp,0) * 180deg));transition:transform .25s linear}
+.si-sun{position:absolute;left:-7px;top:calc(-7.95rem * 52 / 120 - 7px);width:14px;height:14px;border-radius:50%;background:#e9a15a;box-shadow:0 0 0 4px rgba(233,161,90,.25);transition:background .6s,box-shadow .6s}
+.sun-ind[data-i="7"] .si-sun{background:#f3efe2;box-shadow:inset -4px -2px 0 #c9c3b0,0 0 0 4px rgba(120,140,170,.25)}
+.si-time{display:block;font:400 1.05rem/1 var(--serif);font-variant-numeric:tabular-nums;margin-top:.45rem;color:var(--ink)}
+.si-l{display:block;font:500 1.15rem/1.1 var(--hand);color:var(--red)}
+
+/* --- Footer: Nachthimmel --- */
+.footer.nacht{position:relative;overflow:hidden;background:linear-gradient(180deg,#1a2735 0%,#111a24 60%,#0d141c 100%);color:#d7dde3}
+.stars{position:absolute;inset:0;pointer-events:none;opacity:.85;background-image:radial-gradient(1.2px 1.2px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 28% 42%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 47% 12%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 63% 33%,#fff 50%,transparent 51%),radial-gradient(1.3px 1.3px at 78% 20%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 88% 48%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 36% 70%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 70% 64%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 6% 58%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 54% 86%,#fff 50%,transparent 51%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%}
+.stars::after{content:"";position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 72% 10%,#fff 50%,transparent 51%),radial-gradient(1.4px 1.4px at 92% 75%,#fff 50%,transparent 51%);animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.2}to{opacity:1}}
+.moon{position:absolute;right:clamp(1.5rem,8vw,7rem);top:clamp(1.5rem,5vw,3.5rem);width:clamp(48px,6vw,72px);fill:#efe9d6;filter:drop-shadow(0 0 18px rgba(239,233,214,.35))}
+.footer.nacht .foot-inner{position:relative}
+.foot-time{font:400 .95rem/1 var(--serif);letter-spacing:.08em;color:#c9d3dc;margin:0 0 1rem}
+.footer.nacht .foot-hand{color:#f0c7a5}
+.footer.nacht .foot-small{color:#aab4bd}
+.footer.nacht a{color:#f3f1ea}
+
+/* --- Feinschliff --- */
+.nav a:not(.nav-cta){background:linear-gradient(var(--red),var(--red)) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease)}
+.nav a:not(.nav-cta):hover{background-size:100% 1.5px}
+.tel{transition:color .25s}.tel:hover{color:var(--red)}
+
+@media (max-width:1279px){.sun-ind{display:none}}
+@media (max-width:860px){.day-line{padding-left:0}.hero-arc{width:64px;height:28px}}
+@media (prefers-reduced-motion:reduce){.intro{display:none!important}.stars::after{animation:none}.si-arm{transition:none}}
+.sun-ind{width:auto;min-width:8.8rem}
+.sun-ind svg{width:7.2rem}
+.si-arm{left:calc(.8rem + 3.6rem);top:calc(.6rem + 7.2rem * 60 / 120)}
+.si-sun{top:calc(-7.2rem * 52 / 120 - 7px)}
+.si-l{white-space:nowrap;font-size:1.05rem}
+.sun-ind.over-foot{opacity:0;transform:translateY(10px)}
