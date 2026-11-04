@@ -16,7 +16,7 @@
   "font": "\"Figtree\", system-ui, sans-serif",
   "serif": "\"Fraunces\", Georgia, serif"
  },
- "greeting": "Grüß Gott! Ich bin der Demo-Assistent des Gästehauses Kennerknecht in Thalkirchdorf. Fragen Sie mich zu unseren Ferienwohnungen, Preisen, freien Terminen oder zur Anfahrt.",
+ "greeting": "Grüß Gott und herzlich willkommen in Thalkirchdorf! Ich bin der Demo-Assistent des Gästehauses Kennerknecht und erzähle Ihnen gern von den Ferienwohnungen, Preisen, freien Terminen und dem Weg zu uns.",
  "chips": [
   {
    "label": "Wohnungen"
@@ -580,7 +580,19 @@
     "navi",
     "strasse",
     "thalkirchdorf",
-    "oberstaufen"
+    "oberstaufen",
+    "wo finde",
+    "finde ich",
+    "wo finden",
+    "wo seid ihr",
+    "wo genau",
+    "wie kommt man",
+    "komme ich hin",
+    "hinkommen",
+    "hinfahren",
+    "wegbeschreibung",
+    "standort",
+    "anschrift"
    ],
    "answer": "**Gästehaus Kennerknecht**\nKirchdorfer Straße 11\n87534 Oberstaufen-Thalkirchdorf\n\nDas Haus liegt sehr ruhig und doch zentral in Thalkirchdorf bei Oberstaufen.",
    "links": [

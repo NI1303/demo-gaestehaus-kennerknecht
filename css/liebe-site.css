@@ -1,0 +1,16 @@
+/* Gästehaus Kennerknecht – liebevolle Details (Ein Tag im Allgäu). Wird von liebe_inject.py nicht überschrieben. */
+:root{--lv-hand:'Caveat',cursive;--lv-ink:#ad4430;--lv-ul:#c8553d;--lv-tex-o:.35;--lv-note-fs:1.55rem;--lv-ul-w:220px}
+.umgebung{--lv-ul:#e0a63a}
+/* Sternschnuppe im Nacht-Footer */
+.footer.nacht{position:relative}
+.lv-egg-shooting{flex-direction:row-reverse;--lv-egg-ink:#f6e7b0;--lv-egg-fs:1.45rem}
+.lv-egg-shooting .lv-egg-btn svg{filter:drop-shadow(0 0 6px rgba(246,231,176,.8));animation:lvTwinkle 3.2s ease-in-out infinite}
+.lv-egg-shooting .lv-egg-msg{text-align:right;max-width:15rem}
+@keyframes lvTwinkle{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.18) rotate(12deg)}}
+.lv-shoot{top:3rem;left:auto;right:30%;background:linear-gradient(90deg,transparent,#fff7d6);animation-name:lvShootK}
+@keyframes lvShootK{0%{transform:translate(0,0) rotate(160deg);opacity:0}15%{opacity:1}100%{transform:translate(-45vw,18vh) rotate(160deg);opacity:0}}
+.footer .lv-foot{--lv-foot-heart:#f6e7b0;--lv-foot-ink:#f8f4ec;margin:1.6rem 0 1.4rem}
+@media (max-width:899px){.lv-egg-shooting{top:1rem!important;right:1rem!important}.lv-egg-shooting .lv-egg-msg{max-width:11rem;font-size:1.2rem}}
+@media (prefers-reduced-motion:reduce){.lv-egg-shooting .lv-egg-btn svg{animation:none}}
+.lv-404{--lv-404-bg:#f8f4ec;--lv-404-ink:#1f2a22;--lv-404-accent:#ad4430;--lv-404-font:'Figtree',system-ui,sans-serif;--lv-404-display:'Fraunces',Georgia,serif}
+.lv-404-art{color:#4d6a4b}
