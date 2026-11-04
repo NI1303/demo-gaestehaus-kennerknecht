@@ -132,7 +132,7 @@
           var st = h('span', 'lv-shoot'); st.setAttribute('aria-hidden', 'true'); host.appendChild(st);
           setTimeout(function () { st.remove(); }, 1600);
         }
-        clearTimeout(timer); if (on && E.autoclose) timer = setTimeout(function () { if (on) btn.click(); }, E.autoclose);
+        clearTimeout(timer); var ac = (E.autocloseM && window.matchMedia && matchMedia('(max-width:899px)').matches) ? E.autocloseM : E.autoclose; if (on && ac) timer = setTimeout(function () { if (on) btn.click(); }, ac);
       });
       if (E.type === 'level') {
         var bub = btn.querySelector('.lv-bubble');
@@ -156,6 +156,10 @@
         '<button type="button" class="lv-top"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M8 32C10 18 18 10 30 8"/><path d="M21 6.5 30 8l-3.2 8.4"/></svg><span>' + (F.top || 'Nach oben') + '</span></button>';
       var aft = F.after && fh.querySelector(F.after);
       if (aft) aft.parentNode.insertBefore(p, aft.nextSibling); else if (F.before) fh.insertBefore(p, fh.firstChild); else fh.appendChild(p);
+      // Mobil: solange der Abschied sichtbar ist, wird das Chat-FAB kompakt (nur Icon), damit „nach oben" frei klickbar bleibt
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) {
+        root.classList.toggle('lv-foot-in', es[0].isIntersecting);
+      }, { rootMargin: '0px 0px 40px 0px' }).observe(p);
       p.querySelector('.lv-top').addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
         var first = d.querySelector('header a, a'); if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduce ? 0 : 700);

@@ -113,3 +113,10 @@ html[class*="lv-tex-"] body::after{background-image:url(../img/liebe/tex.webp)}
 .lv-404-art .draw{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:lvDraw 1.6s .2s var(--lv-ease) forwards}
 @keyframes lvDraw{to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.lv-404-art .draw{animation:none;stroke-dashoffset:0}}
+
+/* Footer-Abschied vs. Chat-FAB (mobil) */
+@media (max-width:899px){
+  .lv-top{max-width:calc(100% - 4.75rem);box-sizing:border-box}
+  .lv-foot-in .cb-launcher{padding:0 13px;gap:0}
+  .lv-foot-in .cb-launcher-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
